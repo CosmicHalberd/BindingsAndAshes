@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursed Chatbot</title>
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: "Courier New", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+@keyframes flashes{
+    0%{
+        opacity: 0.1;
+        visibility: visible;
+    }
+
+    10%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    20%{
+        opacity: 0.4;
+        visibility: visible;
+    }
+
+    30%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    40%{
+        opacity: 0.35;
+        visibility: visible;
+    }
+
+    50%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    60%{
+        opacity: 0.5;
+        visibility: visible;
+    }
+
+    70%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    80%{
+        opacity: 0.7;
+        visibility: visible;
+    }
+
+    90%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+#chatbox{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: flashes 1s forwards;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#chat-container {
+    width: 800px;
+    height: 500px;
+    border: 3px solid rgb(46, 69, 61);
+    padding: 10px;
+}
+.message {
+    margin: 5px 0;
+}
+.user {
+    color: rgb(46, 69, 61);
+    text-align: right;
+}
+.bot {
+    color: rgb(255, 255, 255);
+    text-align: left;
+}
+#input-container {
+    margin-top: 10px;
+    display: flex;
+}
+#user-input {
+    font-family: "Courier Prime", "Special Elite", serif;
+    font-size: 1.5rem;
+    flex: 1;
+    background: rgb(101, 0, 0);
+    border: 3px solid rgb(46, 69, 61);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+}
+#send-btn {
+    font-family: "Courier Prime", "Special Elite", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: rgb(46, 69, 61);
+    border: 3px solid rgb(46, 69, 61);
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+  </style>
+</head>
+<body>
+        <div id="chatbox">
+            <div id="chat-container"></div>
+            <div id="input-container">
+            <input id="user-input" type="text" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+            </div>
+        </div>
+
+<script>
+    const chatContainer = document.getElementById("chat-container");
+    const userInput = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+
+    // Prewritten bot responses (in order)
+    const botResponses = [
+        "Hello... I've been waiting for you.",
+        "Do you really think you're alone right now?",
+        "Every word you type brings me closer.",
+        "Stop looking over your shoulder, it's useless.",
+        "You belong to me now."
+    ];
+
+    let responseIndex = 0;
+
+    function addMessage(text, sender, animate = false) {
+        const msg = document.createElement("div");
+        msg.classList.add("message", sender);
+
+        if (animate) {
+            decryptEffect(msg, text);
+        } else {
+            msg.textContent = text;
+        }
+
+        chatContainer.appendChild(msg);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    // Decryption text animation
+    function decryptEffect(element, finalText) {
+        const chars = "!@#$%^&*()_+{}[]<>?/\\|abcdefghijklmnopqrstuvwxyz";
+        let iterations = 0;
+
+        const interval = setInterval(() => {
+            let displayText = "";
+            for (let i = 0; i < finalText.length; i++) {
+                if (i < iterations) {
+                    displayText += finalText[i]; // correct character revealed
+                } else {
+                    displayText += chars[Math.floor(Math.random() * chars.length)];
+                }
+            }
+            element.textContent = displayText;
+
+            iterations++;
+            if (iterations > finalText.length) {
+                clearInterval(interval);
+                element.textContent = finalText; // lock final result
+            }
+        }, 50); // speed of "decryption"
+    }
+
+    function botReply() {
+        if (responseIndex < botResponses.length) {
+            setTimeout(() => {
+                addMessage(botResponses[responseIndex], "bot", true);
+                responseIndex++;
+            }, 1000); // delay for creepy effect
+        } else {
+            setTimeout(() => {
+                addMessage("...", "bot", true);
+            }, 1000);
+        }
+    }
+
+    sendBtn.addEventListener("click", () => {
+        const text = userInput.value.trim();
+        if (text) {
+            addMessage(text, "user");
+            userInput.value = "";
+            botReply();
+        }
+    });
+
+    userInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            sendBtn.click();
+        }
+    });
+</script>
+</body>
+</html>

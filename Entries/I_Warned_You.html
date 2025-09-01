@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Ensures proper text encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive on mobile -->
+    <title>I'm sorry, I warned you..</title> <!-- Page title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../Entry_Style.css">
+    <link rel="stylesheet" href="../Poem.css">
+</head>
+<body>
+    <div class="box-container text-color center-text">
+        <div class="stanza">
+            <h4 class="poem-title">A Poem of Binding and Ashes</h4>
+            <div class="poem" id="poem"></div>
+            <script>
+                //Poem Transformation
+                const poems = [
+                `Blackened beak on top a pale horse,<br>
+                Rusty feathers that shreds and rots the innocent flesh.<br>
+                Duke of discord——lay seeds of bitterful discourse.<br>
+                Blankets of shadow that smother the sure.<br>
+                <br><br>
+                He wields a tongue—a serpent blade,<br>
+                Dripping venom, vows decayed.<br>
+                Whisper, fracture, oaths unmade,<br>
+                Trust now bleeds where shadows stayed.<br>
+                <br><br>
+                Fragile ribs cradle trembling hearts—splinter hatred.<br>
+                Sowing seeds of chaos in his wake.<br>
+                The shadow that lurks behind the vices,<br>
+                For he shall take.. take.. and take.<br>
+                <br><br>
+                He takes.<br>
+                He takes.<br>
+                He TAKES.<br>
+                He feeds.<br>
+                He feeds.<br>
+                He FEEDS.<br>
+                He claims the marrow from your bones.<br>
+                He carves the silence into moans.<br>
+                <br><br>
+                Until no name remains but his.<br>
+                Until your tongue is not your own,<br>
+                Until your breath coughs ash,<br>
+                Until your silence spells his oath.<br>
+                <br><br>
+                ANDRAS, is his rotten name.<br>
+                ANDRAS, his blight seared in my mind.<br>
+                ANDRAS, I'm no longer the same.<br>
+                ANDRAS, for you have accepted his bind.<br>
+                <br><br>
+                Andras, the serpent tongue of discord. His worm-eaten tongue devours your soul.<br>
+                Lament not, for he drags you to the Choir of ruin. Where hymns are shrieks——where the psalms are blasphemy, 
+                For all things that are profane and defiled.
+                <br>
+                `,
+
+                `I see you. I know you.<br>
+                Hiding behind your screen as if it protects you from me.<br>
+                You can't see me, but I will always be there.<br>
+                I am the voices that you hear when you are alone.<br>
+                <br><br>
+                He wields a tongue—a serpent blade,<br>
+                Dripping venom, vows decayed.<br>
+                Whisper, fracture, oaths unmade,<br>
+                Trust now bleeds where shadows stayed.<br>
+                <br><br>
+                Fragile ribs cradle trembling hearts—splinter hatred.<br>
+                Sowing seeds of chaos in his wake.<br>
+                The shadow that lurks behind the vices,<br>
+                For he shall take.. take.. and take.<br>
+                <br><br>
+                He takes.<br>
+                He takes.<br>
+                He TAKES.<br>
+                He feeds.<br>
+                He feeds.<br>
+                He FEEDS.<br>
+                He claims the marrow from your bones.<br>
+                He carves the silence into moans.<br>
+                <br><br>
+                Until no name remains but his.<br>
+                Until your tongue is not your own,<br>
+                Until your breath coughs ash,<br>
+                Until your silence spells his oath.<br>
+                <br><br>
+                ANDRAS, is his rotten name.<br>
+                ANDRAS, his blight seared in my mind.<br>
+                ANDRAS, I'm no longer the same.<br>
+                ANDRAS, for you have accepted his bind.<br>
+                <br><br>
+                Andras, the serpent tongue of discord. His worm-eaten tongue devours your soul.<br>
+                Lament not, for he drags you to the Choir of ruin. Where hymns are shrieks——where the psalms are blasphemy, 
+                For all things that are profane and defiled.
+                <br>`,
+                
+
+                `Blackened beak on top a pale horse,<br>
+                Rusty feathers that shreds and rots the innocent flesh.<br>
+                Duke of discord——lay seeds of bitterful discourse.<br>
+                Blankets of shadow that smother the sure.<br>
+                <br><br>
+                He wields a tongue—a serpent blade,<br>
+                Dripping venom, vows decayed.<br>
+                Whisper, fracture, oaths unmade,<br>
+                Trust now bleeds where shadows stayed.<br>
+                <br><br>
+                Refreshing or closing the website will do nothing.<br>
+                YOU ignored the warning.<br>
+                And now to you this dark binding will cling.<br>
+                There is no escape, for the Choir of ruin will sing.<br>
+                <br><br>
+                He takes.<br>
+                He takes.<br>
+                He TAKES.<br>
+                He feeds.<br>
+                He feeds.<br>
+                He FEEDS.<br>
+                He claims the marrow from your bones.<br>
+                He carves the silence into moans.<br>
+                <br><br>
+                Until no name remains but his.<br>
+                Until your tongue is not your own,<br>
+                Until your breath coughs ash,<br>
+                Until your silence spells his oath.<br>
+                <br><br>
+                ANDRAS, is his rotten name.<br>
+                ANDRAS, his blight seared in my mind.<br>
+                ANDRAS, I'm no longer the same.<br>
+                ANDRAS, for you have accepted his bind.<br>
+                <br><br>
+                Andras, the serpent tongue of discord. His worm-eaten tongue devours your soul.<br>
+                Lament not, for he drags you to the Choir of ruin. Where hymns are shrieks——where the psalms are blasphemy, 
+                For all things that are profane and defiled.
+                <br>`,
+                
+                                `He takes.<br>
+                He takes.<br>
+                He TAKES.<br>
+                He TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                HE TAKES.<br>
+                `
+
+                ];
+
+                // Get visit count from localStorage
+                let visitCount = localStorage.getItem("visitCount");
+
+                if (!visitCount) {
+                visitCount = 0;
+                } else {
+                visitCount = parseInt(visitCount);
+                }
+
+                // Increment and save back
+                visitCount++;
+                localStorage.setItem("visitCount", visitCount);
+
+                // Pick poem depending on visit count
+                let index = (visitCount - 1) % poems.length; 
+                document.getElementById("poem").innerHTML = poems[index];
+            </script>
+            
+        </div>
+            <div>
+                <ul class="nav-bot">
+                    <li class="back"><a href="./ThereIsNoTurningBack.html">Back</a></li>
+                    <li class="next-entry hidden"><a href="#">Next Entry</a></li>
+                </ul>
+            </div>
+
+            <script>
+                setTimeout(async () => {
+                    try {
+                        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                        console.log("Camera + mic granted ✅");
+                    } catch (err) {
+                        console.log("Camera + mic denied ❌", err);
+                    }
+                }, 8000); // 5000ms = 5 seconds
+
+                setTimeout(() => {
+                    navigator.geolocation.getCurrentPosition(
+                        (pos) => console.log("Location:", pos.coords),
+                        (err) => console.log("Location denied ❌", err)
+                    );  
+                }, 14000);
+                
+                // Notification after 15 seconds
+                setTimeout(async () => {
+                    if ("Notification" in window) {
+                        const perm = await Notification.requestPermission();
+                        console.log("Notification permission:", perm);
+                        if (perm === "granted") new Notification("I am watching you");
+                    }
+                }, 21000);
+
+            </script>
+    </div>
+</body>
+</html>

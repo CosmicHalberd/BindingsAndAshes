@@ -1,0 +1,39 @@
+html{
+    font-size: 10px;
+}
+
+.box-container{
+    box-sizing: content-box;
+    padding: 2rem;
+}
+
+.poem-title{
+    font-size: 2rem;
+    font-family: "Special Elite", "Courier Prime", serif;
+    letter-spacing: 0.4rem;
+    margin-top: 0.7rem;
+
+}
+
+.stanza{
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    font-family: "Courier Prime", "Special Elite", serif;
+}
+
+.poem{
+    width: 800px;
+    height: 688px;
+    margin-bottom: 4rem;
+}
+
+#first_message{
+    width: 80vw;
+    height: 60vh;
+    max-width: 800px;
+    max-height: 750px;
+    white-space: pre-line;
+    font-size: 1.2rem;
+    line-height: 0.6rem;
+    margin-bottom: 4rem;
+}

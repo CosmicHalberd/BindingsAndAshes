@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- Ensures proper text encoding -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive on mobile -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../reset.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../ThereIsNoTurningBack.css">
+
+        <title>Poema Andreae</title> <!-- Page title -->
+    </head>
+    <body>
+        <div class="background"></div>
+        <div class="sorry box-container text-color center-text fade-out" >
+            <h3>I will forever be sorry.</h3>
+        </div>
+        <div class="entry-list box-container fade-out">
+            <ul class="text-color center-text">
+                <li><a href="#">Entry #1</a></li>
+                <li><a href="#">Entry #2</a></li>
+                <li><a href="#">Entry #3</a></li>
+                <li><a href="#">Entry #4</a></li>
+                <li><a href="#">Entry #5</a></li>
+                <li><a href="#">Entry #6</a></li>
+                <li><a href="#">Entry #</a></li>
+                <li><a href="#">Entry #10</a></li>
+                <li><a href="#">Entry #11</a></li>
+                <li><a href="#">Redacted</a></li>
+                <li><a href="#">To Jamie</a></li>
+                <li><a href="#">DO NOT CLICK</a></li>
+            </ul>
+            <p class="lower-text center-text half-opacity">Father forgive our sins</p>
+        </div>
+        <div class="message-box" id="first_message">
+            <script>
+                setTimeout(() => {
+                    const poem = `He did warn you. `;
+
+                    const finalMessage = poem;
+                    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+                    
+                    const first_messageEl = document.getElementById("first_message");
+                    let revealProgress = 0;
+                    let animationFrame;
+
+                    function decryptEffect() {
+                    let display = "";
+
+                    for (let i = 0; i < finalMessage.length; i++) {
+                        if (i < revealProgress) {
+                        display += finalMessage[i]; // already revealed
+                        } else if (finalMessage[i] === " " || finalMessage[i] === "\n") {
+                        display += finalMessage[i]; // keep spacing
+                        } else {
+                        display += letters[Math.floor(Math.random() * letters.length)];
+                        }
+                    }
+
+                    first_messageEl.textContent = display;
+
+                    if (revealProgress < finalMessage.length) {
+                        // randomly decide when to lock in next char
+                        if (Math.random() < 0.04) revealProgress++;
+                        animationFrame = requestAnimationFrame(decryptEffect);
+                    }
+                    }
+                    decryptEffect();
+                }, 6000);
+            </script>
+        </div>
+        
+        <div class="message-box" id="second_message">
+            <script>
+                setTimeout(() => {
+                    const poem = `But you didn't listen. `;
+
+                    const finalMessage = poem;
+                    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+                    
+                    const second_messageEl = document.getElementById("second_message");
+                    let revealProgress = 0;
+                    let animationFrame;
+
+                    function decryptEffect() {
+                    let display = "";
+
+                    for (let i = 0; i < finalMessage.length; i++) {
+                        if (i < revealProgress) {
+                        display += finalMessage[i]; // already revealed
+                        } else if (finalMessage[i] === " " || finalMessage[i] === "\n") {
+                        display += finalMessage[i]; // keep spacing
+                        } else {
+                        display += letters[Math.floor(Math.random() * letters.length)];
+                        }
+                    }
+
+                    second_messageEl.textContent = display;
+
+                    if (revealProgress < finalMessage.length) {
+                        // randomly decide when to lock in next char
+                        if (Math.random() < 0.04) revealProgress++;
+                        animationFrame = requestAnimationFrame(decryptEffect);
+                    }
+                    }
+                    decryptEffect();
+                }, 16000);
+            </script>
+        </div>
+
+        <div class="message-box" id="third_message">
+            <script>
+                setTimeout(() => {
+                    const poem = `You belong to me now. `;
+
+                    const finalMessage = poem;
+                    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+                    
+                    const third_messageEl = document.getElementById("third_message");
+                    let revealProgress = 0;
+                    let animationFrame;
+
+                    function decryptEffect() {
+                    let display = "";
+
+                    for (let i = 0; i < finalMessage.length; i++) {
+                        if (i < revealProgress) {
+                        display += finalMessage[i]; // already revealed
+                        } else if (finalMessage[i] === " " || finalMessage[i] === "\n") {
+                        display += finalMessage[i]; // keep spacing
+                        } else {
+                        display += letters[Math.floor(Math.random() * letters.length)];
+                        }
+                    }
+
+                    third_messageEl.textContent = display;
+
+                    if (revealProgress < finalMessage.length) {
+                        // randomly decide when to lock in next char
+                        if (Math.random() < 0.04) revealProgress++;
+                        animationFrame = requestAnimationFrame(decryptEffect);
+                    }
+                    }
+                    decryptEffect();
+                }, 29000);
+            </script>
+        </div>
+        <div class="message-box" id="sigil">
+            <img src="../Assets/our_sigil.PNG"/>
+        </div>
+
+        <div id="chatbox">
+            <div id="chat-container"></div>
+            <div id="input-container">
+            <input id="user-input" type="text" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+            </div>
+        </div>
+
+        <script>
+            const chatContainer = document.getElementById("chat-container");
+            const userInput = document.getElementById("user-input");
+            const sendBtn = document.getElementById("send-btn");
+
+            // Prewritten bot responses (in order)
+            const botResponses = [
+            "Even now, you feel safe behind the screen. That’s cute.",
+            "I know you, who you are, where you are, how you are.",
+            "I owe you no answers. You belong to me.",
+            "It's futile to close the site, I will be there in every crevice of your life.",
+            "You’ll scream for help, and nobody will hear you. Nobody will believe you. They will think you are crazy.",
+            "Just remember that in the end, there won't be any light for you above. Your place is with me now."
+            ];
+
+            let responseIndex = 0;
+
+            function addMessage(text, sender, animate = false) {
+                const msg = document.createElement("div");
+                msg.classList.add("message", sender);
+
+                if (animate) {
+                    decryptEffect(msg, text);
+                } else {
+                    msg.textContent = text;
+                }
+
+                chatContainer.appendChild(msg);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+
+            // Decryption text animation
+            function decryptEffect(element, finalText) {
+                const chars = "!@#$%^&*()_+{}[]<>?/\\|abcdefghijklmnopqrstuvwxyz";
+                let iterations = 0;
+
+                const interval = setInterval(() => {
+                    let displayText = "";
+                    for (let i = 0; i < finalText.length; i++) {
+                        if (i < iterations) {
+                            displayText += finalText[i]; // correct character revealed
+                        } else {
+                            displayText += chars[Math.floor(Math.random() * chars.length)];
+                        }
+                    }
+                    element.textContent = displayText;
+
+                    iterations++;
+                    if (iterations > finalText.length) {
+                        clearInterval(interval);
+                        element.textContent = finalText; // lock final result
+                    }
+                }, 50); // speed of "decryption"
+            }
+
+            function botReply() {
+                if (responseIndex < botResponses.length) {
+                    setTimeout(() => {
+                        addMessage(botResponses[responseIndex], "bot", true);
+                        responseIndex++;
+                    }, 1000); // delay for creepy effect
+                } else {
+                    setTimeout(() => {
+                        addMessage("...", "bot", true);
+                    }, 1000);
+                }
+            }
+
+            sendBtn.addEventListener("click", () => {
+                const text = userInput.value.trim();
+                if (text) {
+                    addMessage(text, "user");
+                    userInput.value = "";
+                    botReply();
+                }
+            });
+
+            userInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    sendBtn.click();
+                }
+            });
+        </script>
+    </body>
+</html>

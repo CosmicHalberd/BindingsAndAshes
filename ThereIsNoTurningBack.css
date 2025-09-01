@@ -1,0 +1,201 @@
+html{
+  font-size: 62.5%;
+  font-family: "Courier Prime", 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fade-out{
+    animation: fadeOut 0.1s forwards;
+    animation-delay: 3s;
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+        visibility:visible;
+    }
+
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.background{
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(101, 0, 0);
+    animation: fadeIn 1s forwards 29s;
+}
+.message-box{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+
+    font-family: "Special Elite", "Courier Prime", serif;
+    font-size: 4rem;
+    line-height: 1.6rem;
+    z-index: 2;
+}
+
+#first_message{
+    animation: fadeIn 1s forwards 6s, fadeOut 1s forwards 14s;
+}
+
+#second_message{
+    animation: fadeIn 1s forwards 16s, fadeOut 1s forwards 28s;
+}
+
+#third_message{
+    color:rgb(254, 255, 238);
+    animation: fadeIn 1s forwards 29s, fadeOut 0.5s forwards 36s;
+}
+
+#sigil{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+
+    width: 500px;
+    height: 500px;
+    z-index: 3;
+    animation: flashes 0.5s forwards 37s, fadeOut 0.5s forwards 38s;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes flashes{
+    0%{
+        opacity: 0.1;
+        visibility: visible;
+    }
+
+    10%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    20%{
+        opacity: 0.4;
+        visibility: visible;
+    }
+
+    30%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    40%{
+        opacity: 0.35;
+        visibility: visible;
+    }
+
+    50%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    60%{
+        opacity: 0.5;
+        visibility: visible;
+    }
+
+    70%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    80%{
+        opacity: 0.7;
+        visibility: visible;
+    }
+
+    90%{
+        opacity: 0;
+        visibility: visible;
+    }
+
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+#chatbox{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: flashes 1s forwards 39s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#chat-container {
+    width: 800px;
+    height: 500px;
+    border: 3px solid rgb(46, 69, 61);
+    padding: 10px;
+    overflow: scroll;
+}
+.message {
+    margin: 5px 0;
+}
+
+.user {
+    font-family: "Courier Prime", serif;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: right;
+}
+.bot {
+    font-family: "Courier Prime", serif;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: left;
+}
+#input-container {
+    margin-top: 10px;
+    display: flex;
+}
+#user-input {
+    font-family: "Courier Prime", "Special Elite", serif;
+    font-size: 1.5rem;
+    flex: 1;
+    background: rgb(101, 0, 0);
+    border: 3px solid rgb(46, 69, 61);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+}
+#send-btn {
+    font-family: "Courier Prime", "Special Elite", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: rgb(46, 69, 61);
+    border: 3px solid rgb(46, 69, 61);
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    cursor: pointer;
+}
